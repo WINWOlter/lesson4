@@ -15,8 +15,8 @@ class Teacher(Person):
   salary = 0
   student = []
 
-  def study(self):
-    self.salary += 1000
+  def teach(self):
+    self.salary += 1000 + len(self.student)
   
   def __init__(self):
     super().__init__("Teacher")
@@ -51,8 +51,16 @@ student.study()
 student.study()
 student.study()
 
+student = Student()
+student2 = Student()
+student3 = Student()
+
+
 
 print(student.grade)
-
-
-  
+print("ЗП вчитиля до -",teacher.salary)
+teacher.set_grade(student)
+teacher.set_grade(student2)
+teacher.set_grade(student3)
+teacher.teach()
+print("ЗП вчителя після - ",teacher.salary)
